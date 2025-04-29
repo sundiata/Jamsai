@@ -128,9 +128,9 @@
                             <div class="tab-content">
                                 <div id="tab-content-1" class="container tab-pane active">
                                     <!-- <p>The families of Jammeh and Saidy Kunda have come together to create the JamSai Foundation with the intention of leaving a lasting positive impact on society. We have recognised the unmet social needs within our communities and see the opportunity to contribute our part.</p> -->
-                                    <p>JamSai Foundation is a charitable non-profit organisation dedicated to providing grants and donations, both in kind and cash, to less privileged individuals. The foundation concentrates its efforts in rural areas, we recognised the challenges faced by many in rural areas.
-                                        JamSai is determined to render aid and support services to vulnerable people in communities, including the needy, widows, orphans, and school children. Our main goal is to contribute to the promotion of equality, equity, and provide opportunities for others to enjoy life's privileges. Moreover, we provide quality and nutritious meals during the holy month of Ramadan.</p>
-                                    <p>Our main goal is to contribute to the promotion of equality, equity, and provide opportunities for others to enjoy life's privileges .</p>
+                                    <p>JamSai Foundation is a charitable non-profit organisation dedicated to providing grants and donations, both in kind and cash, to less privileged individuals. The foundation concentrates its efforts in rural areas, we recognised the challenges faced by many in rural areas. .</p>
+                                    <p>JamSai is determined to render aid and support services to vulnerable people in communities, including the needy, widows, orphans, and school children. Moreover, we provide quality and nutritious meals during the holy month of Ramadan.</p>
+                                    <p>Our main goal is to contribute to the promotion of equality, equity, and provide opportunities for others to enjoy life's privileges..</p>
                                 </div>
                                 <div id="tab-content-2" class="container tab-pane fade">
                                     <h3>Our Mission</h3>
@@ -151,7 +151,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>>
         <!-- About End -->
         
         
@@ -437,5 +437,26 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+            // Hide URL when navigating between pages
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get all navigation links
+                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                
+                // Add click event listeners to all navigation links
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        // Only modify history if not already on the target page
+                        if (this.href !== window.location.href) {
+                            e.preventDefault();
+                            // Push a new state to hide the URL
+                            history.pushState(null, '', '/');
+                            // Navigate to the new page
+                            window.location.href = this.href;
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

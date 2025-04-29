@@ -177,8 +177,7 @@
                             <p>Help us provide sustainable boreholes and water tanks to remote villages across The Gambia, where access to clean water remains a daily struggle.</p>
                         </div>
                         <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
+                            <a class="btn btn-custom" href="donate.html">Donate Now</a>
                         </div>
                     </div>
         
@@ -202,8 +201,8 @@
                             <p>We aim to equip underprivileged children with books, uniforms, and learning materials so they can attend school and shape a brighter future.</p>
                         </div>
                         <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
+                            <!-- <a class="btn btn-custom">Learn More</a> -->
+                            <a class="btn btn-custom" href="donate.html">Donate Now</a>
                         </div>
                     </div>
         
@@ -227,8 +226,8 @@
                             <p>We aim to  support local clinics by training midwives and supplying maternal health kits to reduce childbirth-related complications in rural Gambia.</p>
                         </div>
                         <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
+                                <!-- <a class="btn btn-custom">Learn More</a> -->
+                            <a class="btn btn-custom" href="donate.html">Donate Now</a>
                         </div>
                     </div>
         
@@ -252,8 +251,8 @@
                             <p>We aim to empower young Gambians through vocational training in ICT, carpentry, tailoring, and entrepreneurship to fight unemployment.</p>
                         </div>
                         <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
+                            <!-- <a class="btn btn-custom">Learn More</a> -->
+                            <a class="btn btn-custom" href="donate.html">Donate Now</a>
                         </div>
                     </div>
                 </div>
@@ -414,5 +413,26 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+            // Hide URL when navigating between pages
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get all navigation links
+                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+                
+                // Add click event listeners to all navigation links
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        // Only modify history if not already on the target page
+                        if (this.href !== window.location.href) {
+                            e.preventDefault();
+                            // Push a new state to hide the URL
+                            history.pushState(null, '', '/');
+                            // Navigate to the new page
+                            window.location.href = this.href;
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
