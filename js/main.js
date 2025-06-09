@@ -56,6 +56,7 @@
     // Main carousel
     $(".carousel .owl-carousel").owlCarousel({
         autoplay: true,
+        autoplayTimeout: 6000,  // 6 seconds between slides
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         items: 1,
