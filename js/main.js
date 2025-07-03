@@ -34,6 +34,38 @@
         }
     });
     
+    // Enhanced Mobile Menu
+    $(document).ready(function() {
+        // Close mobile menu when clicking on a link
+        $('.navbar-nav .nav-link').on('click', function() {
+            if ($(window).width() < 992) {
+                $('.navbar-collapse').collapse('hide');
+            }
+        });
+        
+        // Add smooth transition to mobile menu items
+        $('.navbar-nav .nav-item').each(function(index) {
+            $(this).css('animation-delay', (index * 0.1) + 's');
+        });
+        
+        // Prevent body scroll when mobile menu is open
+        $('.navbar-toggler').on('click', function() {
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('body').css('overflow', 'hidden');
+            } else {
+                $('body').css('overflow', 'auto');
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.navbar').length) {
+                $('.navbar-collapse').collapse('hide');
+                $('body').css('overflow', 'auto');
+            }
+        });
+    });
+    
     
     // Dropdown on mouse hover
     $(document).ready(function () {
